@@ -137,9 +137,9 @@ location / {
 
     rewrite ^ $request_uri break;
 
-    limit_conn ip_school_conn 500;
-    limit_req zone=ip_school burst=100;
-    limit_req zone=ip_school_min burst=2000;
+    limit_conn ip_school_conn CHANGE_IT_INT_TYPE;
+    limit_req zone=ip_school burst=CHANGE_IT_INT_TYPE;
+    limit_req zone=ip_school_min burst=CHANGE_IT_INT_TYPE;
 
     limit_rate_after 5m;
     limit_rate 250k;
